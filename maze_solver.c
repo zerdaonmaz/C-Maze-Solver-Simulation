@@ -126,7 +126,7 @@ void labirentiYukle(void);
 void cikisEkraniGoster(void);
 void yaziAnimasyonluYaz(const char *metin, int gecikme);
 
-//MAIN FONS›YONU
+//MAIN FONS√ùYONU
 int main(void)
 {   
     srand((unsigned)time(NULL));
@@ -144,7 +144,7 @@ int main(void)
     imleciCiz();
 
     while (1) {
-        if (aktifMod == MOD_BFS && !duraklatildi) {        /* 1) BFS yay˝lmas˝ */
+        if (aktifMod == MOD_BFS && !duraklatildi) {        /* 1) BFS yay√Ωlmas√Ω */
             if (kbhit()) {
                 int kod;
                 int genis = genisTusOku(&kod);
@@ -153,7 +153,7 @@ int main(void)
                        strcpy(durumMesaji, "Duraklatildi.");
                        durumYazisiniCiz();
                        altMenuCiz();
-                    continue;  /* BFS bloundan Á˝k, ana dˆng¸ye dˆn */
+                    continue;  /* BFS blo√∞undan √ß√Ωk, ana d√∂ng√ºye d√∂n */
                     }
             }
             if (!bfsAdim()) {
@@ -172,7 +172,7 @@ int main(void)
            continue;
         }
        
-       if (aktifMod == MOD_BFS_YOL && !duraklatildi) {       /* 2) BFS ye˛il yol animasyonu */
+       if (aktifMod == MOD_BFS_YOL && !duraklatildi) {       /* 2) BFS ye√æil yol animasyonu */
        	    if (kbhit()) {
                 int kod;
                 int genis = genisTusOku(&kod);
@@ -199,7 +199,7 @@ int main(void)
         continue;
         }
         
-        if (aktifMod == MOD_DFS && !duraklatildi) {       /* 3) DFS animasyonu  <<< BURASI YEN› */
+        if (aktifMod == MOD_DFS && !duraklatildi) {       /* 3) DFS animasyonu  <<< BURASI YEN√ù */
         	if (kbhit()) {
                int kod;
                int genis = genisTusOku(&kod);
@@ -240,7 +240,7 @@ int main(void)
                 break;
             }    
             if (kod == TUS_BOSLUK) {
-                if ((aktifMod == MOD_BFS ||                 /* SADECE algoritma Áal˝˛˝yorken duraklat */
+                if ((aktifMod == MOD_BFS ||                 /* SADECE algoritma √ßal√Ω√æ√Ωyorken duraklat */
                    aktifMod == MOD_BFS_YOL ||
                    aktifMod == MOD_DFS) && !duraklatildi) {
 
@@ -249,7 +249,7 @@ int main(void)
                     durumYazisiniCiz();
                     altMenuCiz();
                 }
-                else if ((aktifMod == MOD_BFS ||                      /* SADECE duraklat˝lm˝˛ken devam ettir */
+                else if ((aktifMod == MOD_BFS ||                      /* SADECE duraklat√Ωlm√Ω√æken devam ettir */
                         aktifMod == MOD_BFS_YOL ||
                         aktifMod == MOD_DFS) && duraklatildi) {
                          duraklatildi = 0;
@@ -328,7 +328,7 @@ int main(void)
                        labirentiYedekle();
                     }
                     duraklatildi = 0;
-                    /* algoritma seÁ */
+                    /* algoritma se√ß */
                    if (siradakiAlgoritma == 0) {
                         strcpy(durumMesaji,
                         "Derinlik Oncelikli Arama (DFS)... Bosluk: durdur.");
@@ -482,16 +482,16 @@ void imleciHareketEttir(int ds, int dt)
     if (!sinirlarIcindeMi(yeniS, yeniT))
         return;
 
-    imlecSatir = yeniS;           //›MLEC› TAS›
+    imlecSatir = yeniS;           //√ùMLEC√ù TAS√ù
     imlecSutun = yeniT;
     
-    if (aktifMod == MOD_CIZ) cizimUygula();           /*  Mod i˛lemini UYGULA (ˆnemli!) */
+    if (aktifMod == MOD_CIZ) cizimUygula();           /*  Mod i√ælemini UYGULA (√∂nemli!) */
     else if (aktifMod == MOD_SIL) silmeUygula();
     else if (aktifMod == MOD_DUVAR)  duvarUygula();
 
-    hucreyiYenidenCiz(eskiS, eskiT);       /*Eski h¸creyi GER«EK iÁeriiyle geri Áiz */
+    hucreyiYenidenCiz(eskiS, eskiT);       /*Eski h√ºcreyi GER√áEK i√ßeri√∞iyle geri √ßiz */
     
-    imleciCiz();               /*Yeni imleci Áiz */
+    imleciCiz();               /*Yeni imleci √ßiz */
     
     if (aktifMod != 99)
     imleciCiz();
@@ -514,7 +514,7 @@ void ekraniCiz(void)
     for(s=0;s<yukseklik;s++){   
     	imlecGit(IC_X, IC_Y + 1 + s);               //ic alan
          
-        if (s == baslangicSatir){         /* SOL DUVAR (giri˛ burada) */
+        if (s == baslangicSatir){         /* SOL DUVAR (giri√æ burada) */
 		 renkAyarla(RENK_YESIL);
 		 putchar('>');
 		}
@@ -539,7 +539,7 @@ void ekraniCiz(void)
         }
         else if (labirent[s][t] == HUCRE_DUVAR) {
                 SetConsoleTextAttribute(konsol, RENK_DUVAR);
-                putchar(' ');   // <<< DUVAR = BOﬁLUK
+                putchar(' ');   // <<< DUVAR = BO√ûLUK
                 SetConsoleTextAttribute(konsol, RENK_BEYAZ);
         }
         else {
@@ -548,7 +548,7 @@ void ekraniCiz(void)
         }
     }
         
-        if (s == cikisSatir){            /* SA– DUVAR (Á˝k˝˛ burada) */
+        if (s == cikisSatir){            /* SA√ê DUVAR (√ß√Ωk√Ω√æ burada) */
         	renkAyarla(RENK_KIRMIZI);
 		    putchar('>');
 		}
@@ -592,8 +592,8 @@ int genisTusOku(int *kod)
 void konsolImleciniGizle(void)
 {
     CONSOLE_CURSOR_INFO imlec;
-    imlec.dwSize = 1;        /* Boyutu ˆnemsiz */
-    imlec.bVisible = FALSE; /* Gˆr¸nmez yap */
+    imlec.dwSize = 1;        /* Boyutu √∂nemsiz */
+    imlec.bVisible = FALSE; /* G√∂r√ºnmez yap */
     SetConsoleCursorInfo(konsol, &imlec);
 }
 
@@ -641,8 +641,8 @@ void renkAyarla(WORD renk)
 void disCerceveCiz(void)
 {
     int x, y;
-    int gen = IC_X + (genislik + 2) + 4; /* sada 2 bo˛luk */
-    int yuk = IC_Y + (yukseklik + 2) + 8; /* yaz˝lar iÁin alan */
+    int gen = IC_X + (genislik + 2) + 4; /* sa√∞da 2 bo√æluk */
+    int yuk = IC_Y + (yukseklik + 2) + 8; /* yaz√Ωlar i√ßin alan */
 
 
     char LU = (char)201;
@@ -689,16 +689,16 @@ if (aktifMod == MOD_BFS || aktifMod == MOD_BFS_YOL || aktifMod == MOD_DFS)
     renkAyarla(RENK_KIRMIZI);
 
     if (aktifMod == MOD_GEZ) {
-        /* bo˛sa +, y˝ld˝z˝n ¸st¸ndeyse y˝ld˝z KIRMIZI gˆr¸n¸r */
-        if (alt == HUCRE_YOL) putchar(HUCRE_YOL);   /* k˝rm˝z˝ * */
-        else if (alt == HUCRE_BOS) putchar('+');   /* k˝rm˝z˝ + */
+        /* bo√æsa +, y√Ωld√Ωz√Ωn √ºst√ºndeyse y√Ωld√Ωz KIRMIZI g√∂r√ºn√ºr */
+        if (alt == HUCRE_YOL) putchar(HUCRE_YOL);   /* k√Ωrm√Ωz√Ω * */
+        else if (alt == HUCRE_BOS) putchar('+');   /* k√Ωrm√Ωz√Ω + */
         else putchar(alt);                         /* duvar vs */
     }
     else if (aktifMod == MOD_SIL) {
-        putchar('_'); /* k˝rm˝z˝ alt Áizgi */
+        putchar('_'); /* k√Ωrm√Ωz√Ω alt √ßizgi */
     }
     else if (aktifMod == MOD_CIZ) {
-        putchar(HUCRE_YOL); /* k˝rm˝z˝ imleÁ y˝ld˝z˝ */
+        putchar(HUCRE_YOL); /* k√Ωrm√Ωz√Ω imle√ß y√Ωld√Ωz√Ω */
     }
     else if (aktifMod == MOD_DUVAR) {
         putchar(' ');
@@ -722,7 +722,7 @@ void durumYazisiniCiz(void)
     imlecGit(IC_X, y);
     printf(">> ");
    
-    if (strcmp(durumMesaji, "Duraklatildi.") == 0 ||          /* DURAKLAT / DEVAM yaz˝lar˝n˝ k˝rm˝z˝ yap */
+    if (strcmp(durumMesaji, "Duraklatildi.") == 0 ||          /* DURAKLAT / DEVAM yaz√Ωlar√Ωn√Ω k√Ωrm√Ωz√Ω yap */
         strcmp(durumMesaji, "Devam ediliyor.") == 0) {
             imlecGit(IC_X, y);
             printf(">> ");
@@ -829,7 +829,7 @@ void bfsBaslat(void)
     int s, t;
     tumYollariTemizle();
     
-    for (s = 0; s < yukseklik; s++)   /* dizileri s˝f˝rla */
+    for (s = 0; s < yukseklik; s++)   /* dizileri s√Ωf√Ωrla */
         for (t = 0; t < genislik; t++) {
             bfsZiyaret[s][t] = 0;
             parentS[s][t] = -1;
@@ -855,7 +855,7 @@ int bfsAdim(void)
         return 0;
 
     if (qBas == qSon)
-        return 0;   // kuyruk bitti õ BFS bitti
+        return 0;   // kuyruk bitti ¬õ BFS bitti
 
     Dugum d = kuyruk[qBas++];
     int s = d.s;
@@ -884,7 +884,7 @@ int bfsAdim(void)
 
         kuyruk[qSon++] = (Dugum){ns, nt};
 
-        /* ---- «IKIﬁ BULUNDU ---- */
+        /* ---- √áIKI√û BULUNDU ---- */
         if (ns == cikisSatir && nt == cikisSutun) {
 
             bfsBulundu = 1;
@@ -893,7 +893,7 @@ int bfsAdim(void)
             int s2 = ns;
             int t2 = nt;
 
-            /* Á˝k˝˛tan ba˛lang˝ca parent ile geri git */
+            /* √ß√Ωk√Ω√ætan ba√ælang√Ωca parent ile geri git */
             while (!(s2 == baslangicSatir && t2 == baslangicSutun)) {
                 yolDiziS[yolUzunluk] = s2;
                 yolDiziT[yolUzunluk] = t2;
@@ -905,18 +905,18 @@ int bfsAdim(void)
                 t2 = pt;
             }
 
-            /* ba˛lang˝Á h¸cresini de ekle */
+            /* ba√ælang√Ω√ß h√ºcresini de ekle */
             yolDiziS[yolUzunluk] = baslangicSatir;
             yolDiziT[yolUzunluk] = baslangicSutun;
             yolUzunluk++;
 
-            /* ye˛il Áizim ba˛lang˝Átan ba˛las˝n */
+            /* ye√æil √ßizim ba√ælang√Ω√ßtan ba√ælas√Ωn */
             yolIndex = yolUzunluk - 1;
 
-            return 0;   // BFS yay˝lmas˝ burada biter
+            return 0;   // BFS yay√Ωlmas√Ω burada biter
         }
 
-        /* sar˝ BFS noktas˝ */
+        /* sar√Ω BFS noktas√Ω */
         if (labirent[ns][nt] == HUCRE_BOS)
             labirent[ns][nt] = HUCRE_BFS;
     }
@@ -942,11 +942,11 @@ void cozumTemizle(void)
     for (s = 0; s < yukseklik; s++) {
         for (t = 0; t < genislik; t++) {
 
-            /* DFS / BFS sonucu Áizilen ye˛iller */
+            /* DFS / BFS sonucu √ßizilen ye√æiller */
             if (labirent[s][t] == HUCRE_YESIL)
                 labirent[s][t] = HUCRE_YOL;
 
-            /* BFS yay˝lma noktalar˝ */
+            /* BFS yay√Ωlma noktalar√Ω */
             else if (labirent[s][t] == HUCRE_BFS)
                 labirent[s][t] = HUCRE_BOS;
         }
@@ -1013,12 +1013,12 @@ void dfsBaslat(void)
 int dfsAdim(void)
 {
     if (dfsTop < 0)
-        return 0;   // stack bo˛ õ DFS bitti
+        return 0;   // stack bo√æ ¬õ DFS bitti
 
     int s = dfsStackS[dfsTop];
     int t = dfsStackT[dfsTop];
     
-    if (s == cikisSatir && t == cikisSutun) {        /* Á˝k˝˛ bulundu mu? */
+    if (s == cikisSatir && t == cikisSutun) {        /* √ß√Ωk√Ω√æ bulundu mu? */
         dfsBulundu = 1;
         return 0;
     }
@@ -1047,13 +1047,13 @@ int dfsAdim(void)
         dfsZiyaret[ns][nt] = 1;
         dfsKesif++;
 
-        labirent[ns][nt] = HUCRE_YESIL;  // YEﬁ›L yol
+        labirent[ns][nt] = HUCRE_YESIL;  // YE√û√ùL yol
         dfsYolUzunluk++;
 
-        return 1;  // SADECE 1 ad˝m
+        return 1;  // SADECE 1 ad√Ωm
     }
  
-    labirent[s][t] = HUCRE_BFS; // sar˝ nokta      /* Á˝kmaz sokak õ geri dˆn */
+    labirent[s][t] = HUCRE_BFS; // sar√Ω nokta      /* √ß√Ωkmaz sokak ¬õ geri d√∂n */
     dfsKesif++;
     dfsTop--;
 
@@ -1120,7 +1120,7 @@ void rastgeleLabirentOlustur(void)
             top--;
     }
 
-    labirent[cikisSatir][cikisSutun] = HUCRE_YOL;       /* 3) «˝k˝˛˝ garanti et */
+    labirent[cikisSatir][cikisSutun] = HUCRE_YOL;       /* 3) √á√Ωk√Ω√æ√Ω garanti et */
 }
 
 
@@ -1157,14 +1157,14 @@ void labirentiKaydet(void)
         return;
     }
 
-    fprintf(fp, "%d %d\n", genislik, yukseklik);          /* boyutlar˝ yaz */
+    fprintf(fp, "%d %d\n", genislik, yukseklik);          /* boyutlar√Ω yaz */
     int s,t;
     
     for (s = 0; s < yukseklik; s++) {              /* labirenti yaz */
         for (t = 0; t < genislik; t++) {
             char c = labirent[s][t];
             
-            if (c == HUCRE_YESIL || c == HUCRE_BFS)       /* Áˆz¸m izlerini kaydetme */
+            if (c == HUCRE_YESIL || c == HUCRE_BFS)       /* √ß√∂z√ºm izlerini kaydetme */
                 c = HUCRE_YOL;
 
             fputc(c, fp);
@@ -1200,7 +1200,7 @@ void labirentiYukle(void)
 
     fp = fopen(dosyaAdi, "r");
     char tarihSatiri[64];
-    fgets(tarihSatiri, sizeof(tarihSatiri), fp); // # tarih sat˝r˝
+    fgets(tarihSatiri, sizeof(tarihSatiri), fp); // # tarih sat√Ωr√Ω
 
     if (!fp) {
         strcpy(durumMesaji, "Hata: Dosya bulunamadi!");
@@ -1218,7 +1218,7 @@ void labirentiYukle(void)
 
     fclose(fp);
 
-    baslangicSatir = yukseklik - 2;       /* ba˛lang˝Á / Á˝k˝˛ yeniden ayarlan˝r */
+    baslangicSatir = yukseklik - 2;       /* ba√ælang√Ω√ß / √ß√Ωk√Ω√æ yeniden ayarlan√Ωr */
     baslangicSutun = 0;
     cikisSatir = 1;
     cikisSutun = genislik - 1;
@@ -1237,7 +1237,7 @@ void yaziAnimasyonluYaz(const char *metin, int gecikme)
 {
     while (*metin) {
         putchar(*metin);
-        fflush(stdout);      // an˝nda ekrana bas
+        fflush(stdout);      // an√Ωnda ekrana bas
         Sleep(gecikme);      // ms cinsinden bekle
         metin++;
     }
